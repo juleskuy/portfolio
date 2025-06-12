@@ -284,6 +284,7 @@
             <div>📍 Bandung, Indonesia</div>
             <div>📧 zulfann2299@gmail.com</div>
             <div>📱 +62 812-2217-9661</div>
+            <div>🌐 juleskuy.netlify.app</div>
           `;
           
           header.appendChild(name);
