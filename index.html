@@ -22,7 +22,10 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- PDF Generation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -39,7 +42,9 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="#stats"><i class="bi bi-graph-up navicon"></i><span>Stats</span></a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="#skills"><i class="bi bi-code-slash navicon"></i><span>Skills</span></a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
       </ul>
@@ -47,7 +52,7 @@
 
   </header>
 
-  <main class="main">
+  <main class="main pb-5">
 
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
@@ -58,11 +63,13 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <h2>Zulfan Nurrahman</h2>
-            <p>I'm <span class="typed" data-typed-items="Full-Stack Web Developer, Front-End Web Developer, Social Media Specialist">Full-Stack Web Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p>I'm <span class="typed" data-typed-items="Full-Stack Web Developer, Social Media Specialist"></span></p>
             <div class="social-links">
               <a href="https://github.com/juleeeeee"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/juleskuy"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.instagram.com/zulfann22/"><i class="bi bi-instagram"></i></a>
+              <a href="https://wa.me/6281222179661"><i class="bi bi-whatsapp"></i></a>
               <a href="mailto:zulfann2299@gmail.com"><i class="bi bi-envelope"></i></a>
-              <a href="tel:081222179661"><i class="bi bi-telephone"></i></a>
             </div>
           </div>
         </div>
@@ -121,33 +128,33 @@
         <div class="row gy-4">
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
+            <i class="bi bi-emoji-smile stats-icon" data-aos="bounce" data-aos-delay="100"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter" data-aos="fade-up" data-aos-delay="100"></span>
               <p>Happy Clients</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-journal-richtext"></i>
+            <i class="bi bi-journal-richtext stats-icon" data-aos="bounce" data-aos-delay="200"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="27" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="27" data-purecounter-duration="1" class="purecounter" data-aos="fade-up" data-aos-delay="200"></span>
               <p>Projects</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-headset"></i>
+            <i class="bi bi-headset stats-icon" data-aos="bounce" data-aos-delay="300"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="742" data-purecounter-duration="1" class="purecounter"></span>
+              <span class="hours-support" data-aos="fade-up" data-aos-delay="300">24/7</span>
               <p>Hours Of Support</p>
             </div>
           </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-people"></i>
+            <i class="bi bi-people stats-icon" data-aos="bounce" data-aos-delay="400"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter" data-aos="fade-up" data-aos-delay="400"></span>
               <p>Hard Workers</p>
             </div>
           </div><!-- End Stats Item -->
@@ -157,6 +164,86 @@
       </div>
 
     </section><!-- /Stats Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title pb-0" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>Relevant work experience and education in web development and information technology.</p>
+        <button id="download-resume" class="btn btn-primary mt-4 download-btn">
+          <i class="bi bi-download me-2"></i>Download Resume (PDF)
+        </button>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div id="resume-content" class="bg-white p-4">
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">Summary</h3>
+              <div class="resume-item pb-0">
+                <h4>Zulfan Nurrahman</h4>
+                <p><em>Full Stack & Front-End Web Developer with proven expertise in building scalable, interactive, and user-focused web applications. Skilled in modern frameworks and technologies, delivering high-quality solutions that drive business results.</em></p>
+                <ul>
+                  <li>Bandung, West Java, Indonesia</li>
+                  <li>081222179661</li>
+                  <li>zulfann2299@gmail.com</li>
+                </ul>
+              </div><!-- End Resume Item -->
+              <h3 class="resume-title">Education</h3>
+              <div class="resume-item">
+                <h4>Bachelor of Computer Science (S.Kom.)</h4>
+                <h5>2019 - 2023</h5>
+                <p><em>Universitas Komputer Indonesia (UNIKOM), Bandung</em></p>
+              </div><!-- End Resume Item -->
+              <div class="resume-item">
+                <h4>Software Engineering</h4>
+                <h5>2014 - 2017</h5>
+                <p><em>SMKN 4 Bandung, Bandung</em></p>
+              </div><!-- End Resume Item -->
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="resume-title">Professional Experience</h3>
+              <div class="resume-item">
+                <h4>Full Stack Web Developer (Freelance)</h4>
+                <h5>April 2025 - Now</h5>
+                <p><em>Rensa ID, Bandung</em></p>
+                <ul>
+                  <li>Developed a modern landing page using Laravel, ensuring responsive design and optimal performance.</li>
+                  <li>Implemented a Vuexy-based admin dashboard for efficient content and user management.</li>
+                  <li>Integrated backend and frontend components to deliver a seamless user experience.</li>
+                  <li>Collaborated with stakeholders to gather requirements and deliver project milestones on time.</li>
+                  <li>Maintained code quality and documentation for future scalability and maintenance.</li>
+                </ul>
+              </div><!-- End Resume Item -->
+              <div class="resume-item">
+                <h4>Social Media Specialist</h4>
+                <h5>April 2024 - August 2024</h5>
+                <p><em>Jaeda, Bandung</em></p>
+                <ul>
+                  <li>Managed and developed social media content to increase brand awareness and engagement.</li>
+                  <li>Planned and executed social media strategies, including content planning, scheduling, and community management.</li>
+                  <li>Analyzed social media performance and provided regular reports to optimize strategy.</li>
+                  <li>Interacted with followers and built good relationships with the online community.</li>
+                  <li>Created social media performance reports.</li>
+                </ul>
+              </div><!-- End Resume Item -->
+              <div class="resume-item">
+                <h4>Front-End Web Developer</h4>
+                <h5>August 2020 - November 2020</h5>
+                <p><em>PLN Kota Bandung, Bandung</em></p>
+                <ul>
+                  <li>Developed and maintained PLN website, focusing on location-based feature implementation using Google Maps API.</li>
+                  <li>Responsible for user interface (UI) and user experience (UX) for the feature.</li>
+                </ul>
+              </div><!-- End Resume Item -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Resume Section -->
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
@@ -171,8 +258,8 @@
 
         <div class="row skills-content skills-animation">
 
-          <div class="col-lg-6">
-            <h5 class="mb-3">Front-End</h5>
+          <div class="col-lg-4">
+            <h5 class="mb-3">Front-End Development</h5>
             <div class="progress">
               <span class="skill"><span>JavaScript (ES6+)</span> <i class="val">88%</i></span>
               <div class="progress-bar-wrap">
@@ -192,37 +279,37 @@
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>Next.js</span> <i class="val">78%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill"><span>Vuexy Admin</span> <i class="val">85%</i></span>
+              <span class="skill"><span>HTML5 & CSS3</span> <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>HTML5</span> <i class="val">95%</i></span>
+              <span class="skill"><span>Bootstrap</span> <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>CSS3 & Bootstrap</span> <i class="val">92%</i></span>
+              <span class="skill"><span>Tailwind CSS</span> <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <h5 class="mb-3">Back-End & Tools</h5>
+          <div class="col-lg-4">
+            <h5 class="mb-3">Back-End Development</h5>
             <div class="progress">
               <span class="skill"><span>Laravel</span> <i class="val">87%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>PHP</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
@@ -232,19 +319,53 @@
               </div>
             </div>
             <div class="progress">
+              <span class="skill"><span>MySQL</span> <i class="val">82%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Node.js</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>MariaDB</span> <i class="val">82%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <h5 class="mb-3">Tools & Others</h5>
+            <div class="progress">
               <span class="skill"><span>Git & GitHub</span> <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>CodeIgniter</span> <i class="val">80%</i></span>
+              <span class="skill"><span>VS Code</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>npm/yarn</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Agile/Scrum</span> <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>Python</span> <i class="val">75%</i></span>
+              <span class="skill"><span>CI/CD</span> <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -256,93 +377,6 @@
       </div>
 
     </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Relevant work experience and education in web development and information technology.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Summary</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Zulfan Nurrahman</h4>
-              <p><em>Full Stack & Front-End Web Developer with proven expertise in building scalable, interactive, and user-focused web applications. Skilled in modern frameworks and technologies, delivering high-quality solutions that drive business results.</em></p>
-              <ul>
-                <li>Bandung, West Java, Indonesia</li>
-                <li>081222179661</li>
-                <li>zulfann2299@gmail.com</li>
-              </ul>
-            </div><!-- End Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Computer Science (S.Kom.)</h4>
-              <h5>2019 - 2023</h5>
-              <p><em>Universitas Komputer Indonesia (UNIKOM), Bandung</em></p>
-            </div><!-- End Resume Item -->
-
-            <div class="resume-item">
-              <h4>Software Engineering</h4>
-              <h5>2014 - 2017</h5>
-              <p><em>SMKN 4 Bandung, Bandung</em></p>
-            </div><!-- End Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Full Stack Web Developer (Freelance)</h4>
-              <h5>April 2025 - September 2025</h5>
-              <p><em>Rensa ID, Bandung</em></p>
-              <ul>
-                <li>Developed a modern landing page using Laravel, ensuring responsive design and optimal performance.</li>
-                <li>Implemented a Vuexy-based admin dashboard for efficient content and user management.</li>
-                <li>Integrated backend and frontend components to deliver a seamless user experience.</li>
-                <li>Collaborated with stakeholders to gather requirements and deliver project milestones on time.</li>
-                <li>Maintained code quality and documentation for future scalability and maintenance.</li>
-              </ul>
-            </div><!-- End Resume Item -->
-
-            <div class="resume-item">
-              <h4>Social Media Specialist</h4>
-              <h5>April 2024 - August 2024</h5>
-              <p><em>Jaeda, Bandung</em></p>
-              <ul>
-                <li>Managed and developed social media content to increase brand awareness and engagement</li>
-                <li>Planned and executed social media strategies, including content planning, scheduling, and community management</li>
-                <li>Analyzed social media performance and provided regular reports to optimize strategy</li>
-                <li>Interacted with followers and built good relationships with the online community</li>
-                <li>Created social media performance reports</li>
-              </ul>
-            </div><!-- End Resume Item -->
-
-            <div class="resume-item">
-              <h4>Front-End Web Developer</h4>
-              <h5>August 2020 - November 2020</h5>
-              <p><em>PLN Kota Bandung, Bandung</em></p>
-              <ul>
-                <li>Developed and maintained PLN website, focusing on location-based feature implementation using Google Maps API</li>
-                <li>Responsible for user interface (UI) and user experience (UX) for the feature</li>
-              </ul>
-            </div><!-- End Resume Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Resume Section -->
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
@@ -367,7 +401,7 @@
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
-              <img src="assets/img/masonry-portfolio/SpendSense.svg" class="img-fluid" alt="SpendSense Logo">
+              <img src="assets/img/masonry-portfolio/SpendSense.svg" class="img-fluid" alt="SpendSense Logo" loading="lazy">
               <div class="portfolio-info">
                 <h4>SpendSense</h4>
                 <p>Personal finance management app with real-time tracking, AI-powered budget advice, and interactive charts. Built with React, Next.js, TypeScript, Firebase, and Tailwind CSS.</p>
@@ -377,7 +411,7 @@
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
-              <img src="assets/img/masonry-portfolio/Rensa ID.svg" class="img-fluid" alt="Rensa ID Logo">
+              <img src="assets/img/masonry-portfolio/Rensa ID.svg" class="img-fluid" alt="Rensa ID Logo" loading="lazy">
               <div class="portfolio-info">
                 <h4>Rensa ID Landing Page</h4>
                 <p>Modern landing page and admin dashboard for an interior design business. Includes clear service descriptions, portfolio gallery, strong calls to action, and a secure admin panel for content management. Responsive and conversion-focused, built with Bootstrap.</p>
@@ -387,7 +421,7 @@
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web filter-app">
-              <img src="assets/img/masonry-portfolio/img-placeholder.svg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/img-placeholder.svg" class="img-fluid" alt="" loading="lazy">
               <div class="portfolio-info">
                 <h4>Data Manager RFID Web Application</h4>
                 <p>PHP web application for managing data with RFID hardware integration and Google APIs. Features user authentication, dynamic data loading, deletion/restoration with history, and a responsive Bootstrap 4 interface.</p>
@@ -397,7 +431,7 @@
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-bot">
-              <img src="assets/img/masonry-portfolio/img-placeholder.svg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/img-placeholder.svg" class="img-fluid" alt="" loading="lazy">
               <div class="portfolio-info">
                 <h4>Discord AI Bot</h4>
                 <p>Python-based Discord bot integrating Gemini API for Q&A and Hugging Face for image generation.<br>
@@ -435,30 +469,31 @@
 
         <div class="row justify-content-center">
 
-          <div class="col-lg-6">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div class="col-lg-6 text-end">
+            <div class="info-item d-flex justify-content-end gap-3" data-aos="fade-up" data-aos-delay="200">
               <div>
                 <h3>Location</h3>
                 <p>Bandung, West Java, Indonesia</p>
               </div>
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
             </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
+            <div class="info-item d-flex justify-content-end gap-3" data-aos="fade-up" data-aos-delay="300">
               <div>
                 <h3>Phone</h3>
                 <p>+62 812 2217 9661</p>
               </div>
+              <i class="bi bi-telephone flex-shrink-0"></i>
             </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
+            <div class="info-item d-flex justify-content-end gap-3" data-aos="fade-up" data-aos-delay="400">
               <div>
                 <h3>Email</h3>
                 <p>zulfann2299@gmail.com</p>
               </div>
+              <i class="bi bi-envelope flex-shrink-0"></i>
             </div><!-- End Info Item -->
+          </div>
+
+          <div class="col-lg-6">
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
               <i class="bi bi-github flex-shrink-0"></i>
@@ -468,6 +503,22 @@
               </div>
             </div><!-- End Info Item -->
 
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-linkedin flex-shrink-0"></i>
+              <div>
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/juleskuy" class="text-decoration-none" target="_blank">linkedin.com/in/juleskuy</a></p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-instagram flex-shrink-0"></i>
+              <div>
+                <h3>Instagram</h3>
+                <p><a href="https://www.instagram.com/zulfann22/" class="text-decoration-none" target="_blank">instagram.com/zulfann22</a></p>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -475,6 +526,7 @@
       </div>
 
     </section><!-- /Contact Section -->
+    <div class="mb-5"></div>
 
   </main>
 
@@ -483,11 +535,9 @@
       <h3 class="sitename">Zulfan Nurrahman</h3>
       <p>Full Stack & Front-End Web Developer specializing in building modern, scalable, and user-focused web applications with the latest technologies.</p>
       <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/juleeeeee"><i class="bi bi-github"></i></a>
         <a href="mailto:zulfann2299@gmail.com"><i class="bi bi-envelope"></i></a>
         <a href="tel:081222179661"><i class="bi bi-telephone"></i></a>
         <a href="https://wa.me/6281222179661"><i class="bi bi-whatsapp"></i></a>
-        <a href="https://www.instagram.com/zulfann22/"><i class="bi bi-instagram"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
