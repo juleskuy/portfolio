@@ -327,9 +327,21 @@
             // Style the summary content
             const summaryContent = originalSummary.querySelector('em');
             if (summaryContent) {
-              summaryContent.style.color = '#4a5568';
-              summaryContent.style.fontSize = '14px';
+              summaryContent.style.color = '#2c3e50';
+              summaryContent.style.fontSize = '16px';
               summaryContent.style.lineHeight = '1.6';
+              summaryContent.style.fontStyle = 'normal';
+              
+              // Create a new paragraph element to replace the em
+              const newParagraph = document.createElement('p');
+              newParagraph.textContent = summaryContent.textContent;
+              newParagraph.style.color = '#2c3e50';
+              newParagraph.style.fontSize = '16px';
+              newParagraph.style.lineHeight = '1.6';
+              newParagraph.style.margin = '0';
+              
+              // Replace the em element with the new paragraph
+              summaryContent.parentNode.replaceChild(newParagraph, summaryContent);
             }
           }
           
