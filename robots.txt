@@ -1,0 +1,17 @@
+# Allow all search engines to crawl
+User-agent: *
+
+# Allow important content
+Allow: /
+Allow: /index.html
+Allow: /assets/img/
+Allow: /assets/css/main.css
+
+# Prevent crawling of development files
+Disallow: /sw.js
+Disallow: /manifest.json
+Disallow: /assets/vendor/
+Disallow: /assets/js/
+
+# Tell search engines where to find the sitemap
+Sitemap: https://juleskuy.netlify.app/sitemap.xml
