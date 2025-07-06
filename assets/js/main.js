@@ -460,7 +460,7 @@
     footer.style.fontSize = '12px';
     footer.innerHTML = `
       <div style="margin-bottom: 10px; color: #2c3e50;">
-        <span style="margin: 0 10px;">GitHub: github.com/juleeeeee</span>
+        <span style="margin: 0 10px;">GitHub: github.com/juleskuy</span>
         <span style="margin: 0 10px;">LinkedIn: linkedin.com/in/juleskuy</span>
         <span style="margin: 0 10px;">Instagram: instagram.com/zulfann22</span>
       </div>
