@@ -123,7 +123,15 @@
    * Initiate glightbox
    */
   const glightbox = GLightbox({
-    selector: '.glightbox'
+    selector: '.glightbox',
+    openEffect: 'zoom', /* Use zoom effect when opening the lightbox */
+    closeEffect: 'zoom', /* Use zoom effect when closing the lightbox */
+    slideEffect: 'slide', /* Use slide effect when changing slides */
+    loop: true, /* Enable continuous loop for gallery */
+    autoplayVideos: true, /* Autoplay videos when opened */
+    descPosition: 'bottom', /* Position description at the bottom */
+    zoomable: false, /* Disable zoom functionality for images */
+    draggable: true /* Enable drag functionality for images */
   });
 
   /**

@@ -206,55 +206,66 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -100%;
-  z-index: 3;
-  transition: all 0.4s ease;
-  background: rgba(0, 0, 0, 0.85);
-  padding: 20px;
-  color: #fff;
-  backdrop-filter: blur(4px);
+  bottom: 0;
+  top: 0;
+  transition: all 0.4s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Changed to space-between */
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.portfolio .portfolio-item .portfolio-info .portfolio-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1; /* Allows content to take available space */
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
-  font-weight: 600;
-  padding-right: 50px;
-  margin-bottom: 5px;
+  font-size: 20px;
   color: #fff;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .portfolio .portfolio-item .portfolio-info p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
-  margin-bottom: 0;
-  padding-right: 50px;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
+  margin-bottom: 10px;
+}
+
+.portfolio .portfolio-item .portfolio-info .portfolio-links {
+  margin-top: auto;
+  display: flex;
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link,
 .portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 50px;
-  font-size: 24px;
-  top: calc(50% - 14px);
-  color: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
-  line-height: 0;
-  transform: translateY(20px);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 4px;
+  transition: 0.3s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-  transform: translateY(0);
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 14px;
-  font-size: 28px;
+  color: #fff;
+  border-color: #fff;
+  transform: scale(1.1);
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {
@@ -1594,4 +1605,153 @@ section,
   font-size: 20px;
   margin-right: 8px;
   color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-item {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.portfolio .portfolio-item img {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 8px;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transition: all 0.4s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.portfolio .portfolio-item .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info ul li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 4px;
+  transition: 0.3s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: #fff;
+  border-color: #fff;
+  transform: scale(1.1);
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio .portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+/* GLightbox Overrides */
+.glightbox-container .goverlay {
+  background-color: rgba(0, 0, 0, 0.9) !important; /* Darker overlay */
+}
+
+.gclose {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: var(--accent-color) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.gclose svg {
+  color: white !important; /* White icon for close button */
+}
+
+.gclose:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%) !important;
+}
+
+.gprev, .gnext {
+  width: 50px !important;
+  height: 50px !important;
+  background-color: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent background for arrows */
+  border-radius: 50% !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.gprev svg, .gnext svg {
+  color: white !important; /* White icons for arrows */
+}
+
+.gprev:hover, .gnext:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important; /* Darker on hover */
+}
+
+.gslide-description {
+  background-color: rgba(0, 0, 0, 0.7) !important; /* Slightly transparent background for description */
+  padding: 15px !important;
+  border-radius: 8px !important;
+  color: white !important;
+}
+
+.gslide-title {
+  color: white !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+}
+
+.gslide-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 16px !important;
 }
